@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "demo": "browser-sync --ss demo --port 5174"
+    "demo": "browser-sync --ss iryna-demo --port 5177"
   },
   "devDependencies": {
     "vite": "^4.3.9",

@@ -50,6 +50,7 @@ const handleGuess = (guessEvent, letter) => {
 };
 
 const initSharkwords = () => {
+  console.log("Welcome to Iryna's Sharkwords game (version 1.0)");
   let numWrong = 0;
   setSharkImage(document.getElementById('shark-img'), numWrong);
 
@@ -58,7 +59,7 @@ const initSharkwords = () => {
   setupGuesses(document.querySelector('#letter-buttons'), handleGuess);
 
   // for debugging:
-  console.log(`++++++++++++ WORD: ${word}`);
+  console.log(`WORD: ${word}`);
 };
 
 initSharkwords();
