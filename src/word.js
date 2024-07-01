@@ -1,5 +1,7 @@
+let word;
+
 export function setupWord(element, initWord) {
-  const word = initWord;
+  word = initWord;
   let div;
   for (let i = 0; i <= word.length - 1; i++) {
     div = document.createElement('div');
@@ -8,11 +10,11 @@ export function setupWord(element, initWord) {
   }
 }
 
-export function isLetterInWord(word, letter) {
+export function isLetterInWord(letter) {
   return word.includes(letter);
 }
 
-export function revealLetterInWord(word, letter) {
+export function revealLetterInWord(letter) {
   // fills in a .letter-box element with the given letter
   const listOfBoxes = document.querySelectorAll('.letter-box');
   for (let i = 0; i <= word.length - 1; i++) {
