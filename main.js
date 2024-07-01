@@ -1,7 +1,7 @@
 import './style.css';
 import getRandomWord from './src/randomWord.js';
 import setSharkImage from './src/sharkImage.js';
-import setupWord from './src/word.js';
+import { setupWord, isLetterInWord } from './src/word.js';
 
 document.querySelector('#app').innerHTML = `
   <section id="shark-img"></section>
@@ -15,11 +15,15 @@ document.querySelector('#app').innerHTML = `
 
 const initSharkwords = () => {
   let numWrong = 0;
+  setSharkImage(document.getElementById('shark-img'), numWrong);
+
   const word = getRandomWord();
   setupWord(document.querySelector('#word-container'), word);
 
+  console.log(isLetterInWord(word, 'a'));
+
   // for debugging:
-  console.log(`[INFO] Correct word is: ${word}`);
+  console.log(`++++++++++++ WORD: ${word}`);
 };
 
-initSharkwords(setSharkImage(document.getElementById('shark-img'), 0));
+initSharkwords();

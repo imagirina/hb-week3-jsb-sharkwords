@@ -1,6 +1,4 @@
-let word;
-
-export default function setupWord(element, initWord) {
+export function setupWord(element, initWord) {
   const word = initWord;
   let div;
   for (let i = 0; i <= word.length; i++) {
@@ -10,6 +8,8 @@ export default function setupWord(element, initWord) {
   }
 }
 
-function isLetterInWord(letter) {}
+export function isLetterInWord(word, letter) {
+  return word.includes(letter);
+}
 
 function revealLetterInWord(letter) {}
