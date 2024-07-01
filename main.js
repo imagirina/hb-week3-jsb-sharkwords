@@ -18,6 +18,7 @@ let numWrong = 0;
 
 const handleGuess = (guessEvent, letter) => {
   const sharkImgEl = document.getElementById('shark-img');
+  const listOfBoxes = document.querySelectorAll('.letter-box');
   // Disable button after click
   const button = guessEvent.target;
   button.setAttribute('disabled', true);
@@ -27,6 +28,24 @@ const handleGuess = (guessEvent, letter) => {
   } else {
     numWrong += 1;
     setSharkImage(sharkImgEl, numWrong);
+  }
+
+  // Set isWordComplete to true if every letter box has a non-empty string
+  // listOfBoxes.every((el) => el.innerText !== '');
+  const isWordComplete = Array.from(listOfBoxes).every(
+    (el) => el.innerText !== ''
+  );
+
+  if (isWordComplete) {
+    console.log(' YOU WON!');
+    document.querySelectorAll('button').forEach((btn) => {
+      btn.setAttribute('disabled', true);
+    });
+  }
+  if (numWrong === 5) {
+    document.querySelectorAll('button').forEach((btn) => {
+      btn.setAttribute('disabled', true);
+    });
   }
 };
 
